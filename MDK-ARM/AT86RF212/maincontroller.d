@@ -1,0 +1,9 @@
+at86rf212\maincontroller.o: ..\user\Src\MainController.c
+at86rf212\maincontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+at86rf212\maincontroller.o: ..\user\Src\../Inc/AT86RF212B.h
+at86rf212\maincontroller.o: ..\user\Src\../Inc/AT86RF212B_HAL.h
+at86rf212\maincontroller.o: ..\user\Src\../Inc/RawMode.h
+at86rf212\maincontroller.o: ..\user\Src\../Inc/MainController.h
+at86rf212\maincontroller.o: ..\user\Src\../Inc/Terminal.h
+at86rf212\maincontroller.o: ..\user\Src\../Settings/TerminalSettings.h
+at86rf212\maincontroller.o: ..\user\Src\../Settings/HAL_Settings.h
