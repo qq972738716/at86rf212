@@ -1,5 +1,5 @@
 Dependencies for Project 'AT86RF212', Target 'AT86RF212': (DO NOT MODIFY !)
-F (../Src/main.c)(0x5D2BF56C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\main.o --omf_browse at86rf212\main.crf --depend at86rf212\main.d)
+F (../Src/main.c)(0x5D36F63C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\main.o --omf_browse at86rf212\main.crf --depend at86rf212\main.d)
 I (../Inc/main.h)(0x5D234470)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5CB1A69F)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5D23446F)
@@ -166,7 +166,7 @@ I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_H
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5CB1A69F)
 F (.\startup_stm32f103xb.s)(0x5D234472)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o at86rf212\startup_stm32f103xb.o --depend at86rf212\startup_stm32f103xb.d)
-F (../Src/system_stm32f1xx.c)(0x5D2346E6)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\system_stm32f1xx_1.o --omf_browse at86rf212\system_stm32f1xx_1.crf --depend at86rf212\system_stm32f1xx_1.d)
+F (../Src/system_stm32f1xx.c)(0x5D2346E6)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\system_stm32f1xx.o --omf_browse at86rf212\system_stm32f1xx.crf --depend at86rf212\system_stm32f1xx.d)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5CB1A69D)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5CB1A69D)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include/core_cm3.h)(0x5CB1A69F)
@@ -191,7 +191,7 @@ I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_H
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5CB1A69F)
-F (..\user\Src\AT86RF212B.c)(0x5D2BF66E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\at86rf212b.o --omf_browse at86rf212\at86rf212b.crf --depend at86rf212\at86rf212b.d)
+F (..\user\Src\AT86RF212B.c)(0x5D36F4ED)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\at86rf212b.o --omf_browse at86rf212\at86rf212b.crf --depend at86rf212\at86rf212b.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
@@ -225,10 +225,10 @@ I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_H
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5CB1A69F)
-I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D2BF9E4)
+I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D313887)
 I (..\user\Src\../Settings/HAL_Settings.h)(0x5D23299A)
 I (..\user\Src\../Settings/TerminalSettings.h)(0x5D27DE52)
-F (..\user\Src\AT86RF212B_HAL.c)(0x5D2345FD)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\at86rf212b_hal.o --omf_browse at86rf212\at86rf212b_hal.crf --depend at86rf212\at86rf212b_hal.d)
+F (..\user\Src\AT86RF212B_HAL.c)(0x5D36F471)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\at86rf212b_hal.o --omf_browse at86rf212\at86rf212b_hal.crf --depend at86rf212\at86rf212b_hal.d)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
@@ -259,7 +259,7 @@ I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_H
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5CB1A69F)
 I (..\user\Src\../Inc/Terminal.h)(0x5C904BB0)
 I (..\user\Src\../Inc/Buffer.h)(0x5C9051F1)
-I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D2BF9E4)
+I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D313887)
 I (..\user\Src\../Settings/HAL_Settings.h)(0x5D23299A)
 I (../Inc/usart.h)(0x5D23446F)
 I (../Inc/main.h)(0x5D234470)
@@ -267,12 +267,12 @@ I (../Inc/spi.h)(0x5D23446E)
 F (..\user\Src\Buffer.c)(0x5D232E97)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\buffer.o --omf_browse at86rf212\buffer.crf --depend at86rf212\buffer.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
-I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D2BF9E4)
+I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D313887)
 I (..\user\Src\../Settings/../Inc/AT86RF212B.h)(0x5C904B71)
 I (..\user\Src\../Settings/HAL_Settings.h)(0x5D23299A)
 I (..\user\Src\../Inc/AT86RF212B_HAL.h)(0x5C904B84)
 I (..\user\Src\../Inc/Terminal.h)(0x5C904BB0)
-F (..\user\Src\ErrorsAndLogging.c)(0x5D23364E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\errorsandlogging.o --omf_browse at86rf212\errorsandlogging.crf --depend at86rf212\errorsandlogging.d)
+F (..\user\Src\ErrorsAndLogging.c)(0x5D36F4ED)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\errorsandlogging.o --omf_browse at86rf212\errorsandlogging.crf --depend at86rf212\errorsandlogging.d)
 I (..\user\Src\../Inc/ErrorsAndLogging.h)(0x5D2329A9)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5CB1A69F)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5D23446F)
@@ -312,7 +312,7 @@ I (..\user\Src\../Inc/MainController.h)(0x5C904BC4)
 I (..\user\Src\../Inc/Terminal.h)(0x5C904BB0)
 I (..\user\Src\../Settings/TerminalSettings.h)(0x5D27DE52)
 I (..\user\Src\../Settings/HAL_Settings.h)(0x5D23299A)
-F (..\user\Src\RawMode.c)(0x5D232E57)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\rawmode.o --omf_browse at86rf212\rawmode.crf --depend at86rf212\rawmode.d)
+F (..\user\Src\RawMode.c)(0x5D36F4ED)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ..\user\Inc -I ..\user\Settings -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include-I.\RTE\_AT86RF212-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o at86rf212\rawmode.o --omf_browse at86rf212\rawmode.crf --depend at86rf212\rawmode.d)
 I (..\user\Src\../Inc/AT86RF212B.h)(0x5C904B71)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
 I (..\user\Src\../Inc/AT86RF212B_Constants.h)(0x5AE60748)
@@ -343,7 +343,7 @@ I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_H
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5CB1A69F)
-I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D2BF9E4)
+I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D313887)
 I (..\user\Src\../Settings/HAL_Settings.h)(0x5D23299A)
 I (..\user\Src\../Settings/TerminalSettings.h)(0x5D27DE52)
 I (C:\Keil_v5\ARM\ARMCC\include\String.h)(0x599EDB3C)
@@ -384,7 +384,7 @@ I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_H
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x5CB1A69F)
 I (C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5CB1A69F)
-I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D2BF9E4)
+I (..\user\Src\../Settings/AT86RF212B_Settings.h)(0x5D313887)
 I (..\user\Src\../Settings/HAL_Settings.h)(0x5D23299A)
 I (..\user\Src\../Settings/TerminalSettings.h)(0x5D27DE52)
 I (../Inc/main.h)(0x5D234470)

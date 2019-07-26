@@ -49,7 +49,7 @@ void MainControllerLoop(){
 			break;
 		case MODE_RAW_RX:
 			break;
-		case MODE_RAW_RX_TX:
+		case MODE_RAW_RX_TX:   //<==
 			RawModeMain();
 			break;
 		case MODE_TERMINAL:

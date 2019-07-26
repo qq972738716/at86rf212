@@ -6,7 +6,7 @@
 "at86rf212\stm32f1xx_it.o"
 "at86rf212\stm32f1xx_hal_msp.o"
 "at86rf212\startup_stm32f103xb.o"
-"at86rf212\system_stm32f1xx_1.o"
+"at86rf212\system_stm32f1xx.o"
 "at86rf212\at86rf212b.o"
 "at86rf212\at86rf212b_hal.o"
 "at86rf212\buffer.o"

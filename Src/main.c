@@ -95,10 +95,10 @@ int main(void)
   MX_SPI1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart2,&aRxBuffer1,1);          // Enable the USART1 Interrupt
+  HAL_UART_Receive_IT(&huart2,&aRxBuffer1,1);          // Enable the USART2 Interrupt
   
   HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);
-  printf("hello world\r\n");
+  printf("systerm init ok . . .\r\n");
   
    MainControllerSetMode(MODE_RAW_RX_TX);
    

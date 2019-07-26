@@ -60,9 +60,10 @@ uint8_t PushToInputBuffer(char rxChar){
 	}
 }
 
-uint8_t PopFromTxBuffer(uint8_t* rxByte){
-	return popFromBuffer(&txBuffer, rxByte);
-}
+uint8_t PopFromTxBuffer(uint8_t* rxByte)
+	{
+		return popFromBuffer(&txBuffer, rxByte);
+	}
 
 uint8_t PushToTxBuffer(char rxChar){
 	if(pushToBuffer(&txBuffer, rxChar) == 1){
@@ -74,14 +75,16 @@ uint8_t PushToTxBuffer(char rxChar){
 	}
 }
 
-uint8_t PopFromRxBuffer(uint8_t* rxByte){
-	return popFromBuffer(&rxBuffer, rxByte);
-}
+uint8_t PopFromRxBuffer(uint8_t* rxByte)
+	{
+		return popFromBuffer(&rxBuffer, rxByte);
+	}
 
 uint8_t PushToRxBuffer(char rxChar){
-	if(pushToBuffer(&rxBuffer, rxChar) == 1){
-		return CheckBufferCapacity(rxBuffer);
-	}
+	if(pushToBuffer(&rxBuffer, rxChar) == 1)
+		{
+			return CheckBufferCapacity(rxBuffer); //返回缓冲数据大小
+		}
 	else{
 		//Failed to push to buffer
 		return 0;
@@ -91,10 +94,11 @@ uint8_t PushToRxBuffer(char rxChar){
 static uint8_t CheckBufferCapacity(circleBuffer buffer){
 	//Check if buffer is filling up
 	//Buffer has not wrapped yet
-	if(buffer.head > buffer.tail){
-		if(buffer.head - buffer.tail <= AT86RF212B_MAX_DATA){
-			//Buffer is fine
-			return 1;
+	if(buffer.head > buffer.tail)
+		{
+			if(buffer.head - buffer.tail <= AT86RF212B_MAX_DATA){
+				//Buffer is fine
+				return 1;
 		}
 		else{
 			//Buffer filling up

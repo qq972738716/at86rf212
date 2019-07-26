@@ -63,9 +63,9 @@ void AT86RF212B_Open(){
 	//rxSensLvl = 0 - 15, 0 = max sensitivity
 	config.rxSensLvl = AT86RF212B_RX_SENSE_LVL;
 	//Enable TX CRC generation 1 = on 0 = off
-	config.txCrc = AT86RF212B_TX_CRC;
+	config.txCrc = AT86RF212B_TX_CRC; 
 	//Enables Rx Safe Mode
-	config.rxSafeMode = AT86RF212B_RX_SAFE_MODE;
+	config.rxSafeMode = AT86RF212B_RX_SAFE_MODE;  		/*禁用动态帧缓冲区保护*/
 	config.AACK_UPLD_RES_FT = AT86RF212B_AACK_UPLD_RES_FT;
 	config.AACK_FLTR_RES_FT = AT86RF212B_AACK_FLTR_RES_FT;
 	//Enables the IRQ pin to be used as a frame buffer indicator during frame buffer reads
@@ -103,14 +103,18 @@ void AT86RF212B_Open(){
 }
 
 static void AT86RF212B_SetRegisters(){
-	if(IsLogging()){
+	if(IsLogging())
+		{
+			
 		LOG(LOG_LVL_DEBUG, (uint8_t*)"Registers initiated\r\n");
-	}
+			
+		}
 	AT86RF212B_SetPhyMode();
 	AT86RF212B_PhySetChannel();
 }
 
-uint8_t AT86RF212B_GetState(){
+uint8_t AT86RF212B_GetState()
+{
 	return config.state;
 }
 
@@ -132,13 +136,14 @@ void AT86RF212B_Main(){
 			break;
 		case PLL_ON:
 			break;
-		case RX_AACK_ON:
+		case RX_AACK_ON:   //接收应答
 			AT86RF212B_UpdateIRQ();
-			if(irqState & (TRX_IRQ_TRX_END)){
+			if(irqState & (TRX_IRQ_TRX_END))
+			{
 				AT86RF212B_FrameRead();
 			}
 			break;
-		case TX_ARET_ON:
+		case TX_ARET_ON:   //
 			AT86RF212B_TxData();
 			break;
 		case BUSY_RX_AACK:
@@ -161,24 +166,26 @@ void AT86RF212B_Main(){
 	}
 }
 
-static void AT86RF212B_TxData(){
-	static uint8_t sequenceNumber = 0;
-	uint8_t frame[128];
-	uint8_t txByte = 0;
-	uint8_t bytesToSend = 0;
-	uint8_t status = 0;
+static void AT86RF212B_TxData()
+	{
+		static uint8_t sequenceNumber = 0;
+		uint8_t frame[128];
+		uint8_t txByte = 0;
+		uint8_t bytesToSend = 0;
+		uint8_t status = 0;
 
-	//TODO: This should be the constant AT86RF212B_MAX_DATA however the RaspberryPi is having problems transmitting larger frames
-	//and until that gets resolved a smaller max frame size is being used, this does effect speed as the higher data rates
-	//of the AT86RF212B only apply on the frame transmission, the headers of each framed are transmitted at a lower data rate
-	const uint8_t tmpMaxData = 64;
+		//TODO: This should be the constant AT86RF212B_MAX_DATA however the RaspberryPi is having problems transmitting larger frames
+		//and until that gets resolved a smaller max frame size is being used, this does effect speed as the higher data rates
+		//of the AT86RF212B only apply on the frame transmission, the headers of each framed are transmitted at a lower data rate
+		const uint8_t tmpMaxData = 64;
 
-	UpdateState();
+		UpdateState();
 
-	if(config.state != TX_ARET_ON){
-		AT86RF212B_PhyStateChange(TX_ARET_ON);
-		AT86RF212B_TxData();
-		return;
+		if(config.state != TX_ARET_ON)
+	{
+			AT86RF212B_PhyStateChange(TX_ARET_ON);
+			AT86RF212B_TxData();
+			return;
 	}
 	else if(config.state == TX_ARET_ON)
 	{
@@ -191,7 +198,8 @@ static void AT86RF212B_TxData(){
 			}
 		}
 
-		if(bytesToSend){
+		if(bytesToSend)
+		{
 			AT86RF212B_FrameWrite(frame, bytesToSend, sequenceNumber);
 			sequenceNumber++;
 			//Wait until done transmitting data
@@ -211,17 +219,19 @@ static void AT86RF212B_TxData(){
 				WriteToOutputHAL((uint8_t*)"SUCCESS\r\n", 7);
 			}
 
-			//Sent full frame, check to see if there is more data on the buffer to send
-			if(bytesToSend == tmpMaxData){
-				AT86RF212B_TxData();
-			}
+				//Sent full frame, check to see if there is more data on the buffer to send
+				if(bytesToSend == tmpMaxData)
+				{
+					AT86RF212B_TxData();
+				}
 		}
 	}
 }
 
 //-------------------Primitive Functions from AT86RF212 Programming Manual----------------------//
 
-uint8_t AT86RF212B_RegRead(uint8_t reg){
+uint8_t AT86RF212B_RegRead(uint8_t reg)
+{
 	uint8_t pRxData[2] = {0, 0};
 	uint8_t pTxData[2] = {0, 0};
 
@@ -278,7 +288,8 @@ uint8_t AT86RF212B_BitRead (uint8_t addr, uint8_t mask, uint8_t pos){
 	return currentValue;
 }
 
-static uint8_t 	AT86RF212B_FrameLengthRead(){
+static uint8_t 	AT86RF212B_FrameLengthRead()
+{
 	uint8_t pTxData[2] = {0x20, 0};
 	uint8_t pRxData[2] = {0};
 	AT86RF212B_SPIreadAndWriteHAL(pTxData, pRxData, 2);
@@ -288,8 +299,10 @@ static uint8_t 	AT86RF212B_FrameLengthRead(){
 static void AT86RF212B_PrintBuffer(uint8_t nLength, uint8_t* pData) {
 	char tmpStr[20];
 	int i = 0;
-	for (i = 0; i < nLength; i++) {
-		if (pData[i] < 32 || pData[i] > 126) {
+	for (i = 0; i < nLength; i++) 
+	{
+		if (pData[i] < 32 || pData[i] > 126) 
+		{
 			sprintf(tmpStr, "0x%02X : \r\n", pData[i]);
 		} else {
 			sprintf(tmpStr, "0x%02X : %c\r\n", pData[i], pData[i]);
@@ -322,13 +335,15 @@ void AT86RF212B_FrameRead(){
 	//Read frame command
 	pTxData[0] = 0x20;
 
-	//Disable preamble detector to stop receiving
+	//Disable preamble detector to stop receiving  停止帧接收
 	AT86RF212B_BitWrite(SR_RX_PDT_DIS, 1);
 
-	length = AT86RF212B_FrameLengthRead();
+	length = AT86RF212B_FrameLengthRead();  //读取帧长度
 
-	if(length == 0){
-		if(IsLogging()){
+	if(length == 0) //如果数据帧长度为 0
+	{   
+		if(IsLogging())
+		{
 			ASSERT(0);
 			LOG(LOG_LVL_ERROR, (uint8_t*)"No data on frame\r\n");
 		}
@@ -336,42 +351,52 @@ void AT86RF212B_FrameRead(){
 		AT86RF212B_BitWrite(SR_RX_PDT_DIS, 0);
 		return;
 	}
-	else if(length > 127){
-		if(IsLogging()){
+	else if(length > 127)  //数据帧长度长度超过127
+	{
+		if(IsLogging())
+		{
 			ASSERT(0);
 			LOG(LOG_LVL_ERROR, (uint8_t*)"Frame too large\r\n");
 		}
 		//Enable preamble detector to start receiving again
-		AT86RF212B_BitWrite(SR_RX_PDT_DIS, 0);
+		AT86RF212B_BitWrite(SR_RX_PDT_DIS, 0);   //开启下一帧的接收
 		return;
-	}
-	else{
+	}else
+	{
 		if(IsLogging()){
-			uint8_t tmpStr[20];
-			sprintf((char*)tmpStr, "Reading frame of size %i\r\n", length);
-			LOG(LOG_LVL_DEBUG, (uint8_t*)tmpStr);
+			uint8_t tmpStr[32];
+			sprintf((char*)tmpStr, "Reading frame of size %i\r\n", length); 
+			LOG(LOG_LVL_DEBUG, (uint8_t*)tmpStr);  //打印数据帧的长度
 		}
 
-		AT86RF212B_SPIreadAndWriteHAL(pTxData, pRxData, length+3);
+		AT86RF212B_SPIreadAndWriteHAL(pTxData, pRxData, length+3);  //读取剩下的数据  帧长度 = 数据长度 + 5，已经读取了前2个了
 	}
 
-	if(config.txCrc){
-		if(!AT86RF212B_BitRead(SR_RX_CRC_VALID)){
-			if(IsLogging()){
+	if(config.txCrc)   //已打开 crc 校验
+	{
+		if(!AT86RF212B_BitRead(SR_RX_CRC_VALID))  //判断crc 是否有效
+		{
+			if(IsLogging())
+			{
 				LOG(LOG_LVL_DEBUG, (uint8_t*)"CRC Failed\r\n");
 			}
 			//Enable preamble detector to start receiving again
 			AT86RF212B_BitWrite(SR_RX_PDT_DIS, 0);
 			return;
-		}
-		else{
-			if(IsLogging()){
-				LOG(LOG_LVL_DEBUG, (uint8_t*)"CRC Passed\r\n");
-			}
+		}else
+		{
+			if(IsLogging())
+				{
+					
+					LOG(LOG_LVL_DEBUG, (uint8_t*)"CRC Passed\r\n");
+					
+				}
 
 			//Check if it is a data frame
-			if((pRxData[2] & 0x07) == 1){
-				if(pRxData[4] != prevSequenceNumber){
+			if((pRxData[2] & 0x07) == 1)
+			{
+				if(pRxData[4] != prevSequenceNumber)  //初始序列号为1
+				{
 					uint8_t tmpStr[8];
 					sprintf((char*)tmpStr, "RX");
 					sprintf((char*)&tmpStr[2], "%03i\r\n", length-AT86RF212B_DATA_OFFSET);
@@ -379,25 +404,27 @@ void AT86RF212B_FrameRead(){
 					WriteToOutputHAL(&pRxData[AT86RF212B_DATA_OFFSET], length-AT86RF212B_DATA_OFFSET);
 					WriteToOutputHAL((uint8_t*)"\r\n", 2);
 					prevSequenceNumber = pRxData[4];
-				}
-				else{
-					if(IsLogging()){
+				}else
+				{
+					if(IsLogging())
+					{
 						LOG(LOG_LVL_DEBUG, (uint8_t*)"Dropped Dupe Frame\r\n");
 					}
 				}
-			}
-			//Check if it is an ACK
-			else if((pRxData[2] & 0x07) == 2){
+			}else if((pRxData[2] & 0x07) == 2)//Check if it is an ACK
+			{
 				//ackReceived = 1;
-			}
-			else{
-				if(IsLogging()){
+			}else
+			{
+				if(IsLogging())
+				{
 					ASSERT(0);
 					LOG(LOG_LVL_ERROR, (uint8_t*)"Unknown Frame Type\r\n");
 				}
 			}
 
-			if(IsLogging()){
+			if(IsLogging())
+			{
 				LOG(LOG_LVL_INFO, (uint8_t*)"Data Received\r\n");
 				AT86RF212B_PrintBuffer(length+3, pRxData);
 			}
@@ -437,7 +464,8 @@ static void AT86RF212B_FrameWrite(uint8_t * pData, uint8_t length, uint8_t seque
 	AT86RF212B_PAN_ID_15_8,
 	//Target ID
 	AT86RF212B_SHORT_ADDR_TARGET_7_0,
-	AT86RF212B_SHORT_ADDR_TARGET_15_8};
+	AT86RF212B_SHORT_ADDR_TARGET_15_8
+	};
 
 	pTxData[1] = nLength-2;
 	pTxData[4] = sequenceNumber;
@@ -542,7 +570,8 @@ static void AT86RF212B_TRX_Reset(){
 		AT86RF212B_SetRegisters();
 	}
 	else{
-		if(IsLogging()){
+		if(IsLogging())
+		{
 			ASSERT(0);
 			LOG(LOG_LVL_ERROR, (uint8_t*)"Incorrect State to Run Function: This is real bad\r\n");
 		}
@@ -551,10 +580,14 @@ static void AT86RF212B_TRX_Reset(){
 
 void AT86RF212B_PhyStateChange(uint8_t newState){
 	UpdateState();
-	if(config.state == P_ON){
-		if(IsLogging()){
+	if(config.state == P_ON)
+	{
+		if(IsLogging())
+			{
+				
 			LOG(LOG_LVL_DEBUG, (uint8_t*)"Power on startup beginning\r\n");
-		}
+				
+			}
 		AT86RF212B_SetRegisters();
 		AT86RF212B_PhyStateChange(newState);
 	}
@@ -598,10 +631,10 @@ void AT86RF212B_PhyStateChange(uint8_t newState){
 		if(config.state == RX_AACK_ON){
 			return;
 		}
-		/* AT86RF212::TRX_OFF */
+		/* AT86RF212B::TRX_OFF */
 		if(config.state == TRX_OFF){
 			AT86RF212B_BitWrite(SR_TRX_CMD, CMD_RX_AACK_ON);
-			AT86RF212B_Delay(AT86RF212B_tTR4);
+			AT86RF212B_Delay(AT86RF212B_tTR6);
 			StateChangeCheck(RX_AACK_ON);
 		}
 		 /* AT86RF212::PLL_ON */
@@ -626,17 +659,20 @@ void AT86RF212B_PhyStateChange(uint8_t newState){
 		}
 		break;
 	case TX_ARET_ON:
-		if(config.state == TX_ARET_ON){
+		if(config.state == TX_ARET_ON)
+		{
 			return;
 		}
 		/* AT86RF212::TRX_OFF */
-		if(config.state == TRX_OFF){
+		if(config.state == TRX_OFF)
+		{
 			AT86RF212B_BitWrite(SR_TRX_CMD, CMD_TX_ARET_ON);
 			AT86RF212B_Delay(AT86RF212B_tTR4);
 			StateChangeCheck(CMD_TX_ARET_ON);
 		}
 		 /* AT86RF212::PLL_ON */
-		else if(config.state ==  PLL_ON){
+		else if(config.state ==  PLL_ON)
+		{
 			AT86RF212B_BitWrite(SR_TRX_CMD, CMD_TX_ARET_ON);
 			AT86RF212B_Delay(AT86RF212B_tTR8);
 			StateChangeCheck(CMD_TX_ARET_ON);
@@ -696,16 +732,19 @@ void AT86RF212B_PhyStateChange(uint8_t newState){
 }
 
 static void AT86RF212B_WrongStateError(){
-	if(IsLogging()){
+	if(IsLogging())
+	{
 		ASSERT(0);
 		LOG(LOG_LVL_ERROR, (uint8_t*)"Incorrect State to Run Function: Resetting\r\n");
 	}
 	AT86RF212B_TRX_Reset();
 }
 
-static void AT86RF212B_PhySetChannel(){
+static void AT86RF212B_PhySetChannel()
+	{
 	/* AT86RF212::TRX_OFF */
-	if(config.state == TRX_OFF){
+	if(config.state == TRX_OFF)
+	{
 		AT86RF212B_BitWrite(SR_CC_BAND, 6);
 		//F[MHz] = 902.0[MHz] + 0.1[MHz]  x CC_NUMBER
 		AT86RF212B_BitWrite(SR_CC_NUMBER, 0x00);
@@ -827,7 +866,8 @@ static void AT86RF212B_SetPhyMode(){
 //---------------------------------Custom Functions---------------------------------//
 
 static void AT86RF212B_UpdateIRQ(){
-	if(interupt){
+	if(interupt)
+	{
 		//Clear the interrupt flag
 		interupt = 0;
 		irqState = AT86RF212B_RegRead(RG_IRQ_STATUS);
@@ -894,7 +934,8 @@ static uint8_t StateChangeCheck(uint8_t newState){
 	}
 }
 
-static void UpdateState(){
+static void UpdateState()
+{
 	config.state = AT86RF212B_RegRead(RG_TRX_STATUS);
 }
 

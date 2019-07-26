@@ -23,7 +23,8 @@
 #define MAX_CONTINUOSU_CLEAR 5
 
 
-void RawModeOpen(){
+void RawModeOpen()
+	{
 	SetEchoInput(ECHO_INPUT);
 	switch(MainControllerGetMode())
   {
@@ -58,23 +59,27 @@ void RawModeMain(){
 				code[iter] = tmpChar;
 				code[iter+1] = '\0';
 				iter++;
-				if(iter >= 2){
-					if(code[iter-2] == '\r' && code[iter-1] == '\n'){
-						if(iter == 2){
+				if(iter >= 2)
+			{
+					if(code[iter-2] == '\r' && code[iter-1] == '\n')  //命令以回车换行结尾
+				 {
+						if(iter == 2)   							  //  \r\n
+					  {
 							iter = 0;
 							//Clear Buffer
-							while(PopFromInputBuffer(&tmpChar));
+							while(PopFromInputBuffer(&tmpChar));       
 							WriteToOutputHAL((uint8_t*)"CLEAR\r\n", 7);
 						}
-						else if(strncmp((char*)code, "TX", 2) == 0){
+						else if(strncmp((char*)code, "TX", 2) == 0) //   TX5\r\n
+						{
 							iter = 0;
-							mode = TXDATA;
+							mode = TXDATA;                           //切换到发送 数据
 							code[5] = '\0';
 							length = atoi((char*)&code[2]);
 							RawModeMain();
 							return;
 						}
-						else{
+						else{										  //no \r\n is error
 							iter = 0;
 							//Clear Buffer
 							while(PopFromInputBuffer(&tmpChar));
@@ -82,7 +87,8 @@ void RawModeMain(){
 						}
 					}
 				}
-				if(iter == 10){
+				if(iter == 10)   //len >10 is error
+				{
 					iter = 0;
 					//Clear Buffer
 					while(PopFromInputBuffer(&tmpChar));
@@ -92,39 +98,46 @@ void RawModeMain(){
 			//No data to send so make sure the radio is in RX mode
 			radioMode = MainControllerGetMode();
 			if(radioMode == MODE_RAW_RX_TX){
-				if(AT86RF212B_GetState() != RX_AACK_ON){
+				if(AT86RF212B_GetState() != RX_AACK_ON)
+				{
 					AT86RF212B_PhyStateChange(RX_AACK_ON);
 				}
 			}
 			break;
 		case TXDATA:
-			if(PopFromInputBuffer(&tmpChar)){
+			if(PopFromInputBuffer(&tmpChar))
+			{
 				PushToTxBuffer(tmpChar);
 				lenReceaved ++;
 			}
-			if(lenReceaved == length){
+			
+			if(lenReceaved == length) //指定的长度
+			{
 				lenReceaved = 0;
 				mode = CODE;
 				WriteToOutputHAL((uint8_t*)"OK...\r\n", 7);
 				//Clear buffer
-				while(PopFromInputBuffer(&tmpChar));
+				while(PopFromInputBuffer(&tmpChar));  //多余的数据清除
 				//Switch radio to tx mode
 				radioMode = MainControllerGetMode();
-				if(radioMode == MODE_RAW_RX_TX || radioMode == MODE_RAW_TX){
-					if(AT86RF212B_GetState() != TX_ARET_ON){
-						AT86RF212B_PhyStateChange(TX_ARET_ON);
+				if(radioMode == MODE_RAW_RX_TX || radioMode == MODE_RAW_TX)
+				{
+					if(AT86RF212B_GetState() != TX_ARET_ON)
+					{
+						AT86RF212B_PhyStateChange(TX_ARET_ON); //切换到发送模式
 					}
 				}
 			}
 			break;
     }
 
-    if(PopFromRxBuffer(&tmpChar)){
-    	WriteToOutputHAL((uint8_t*)"FRAME", 5);
-		while(PopFromRxBuffer(&tmpChar)){
-			WriteToOutputHAL(&tmpChar, 1);
+    if(PopFromRxBuffer(&tmpChar)) //接收到无线数据
+		{
+			WriteToOutputHAL((uint8_t*)"FRAME", 5);
+			while(PopFromRxBuffer(&tmpChar)){
+				WriteToOutputHAL(&tmpChar, 1);
 		}
     }
-	ReadInputHAL();
+    //	ReadInputHAL();   /*读入串口数据*/
 	return;
 }

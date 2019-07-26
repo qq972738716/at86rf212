@@ -16,7 +16,7 @@
 
 #define MIN_LOG_LVL LOG_LVL_INFO
 
-static uint8_t logging = 0;
+static uint8_t logging = 1;
 
 void LOG(LOG_LVL lvl, uint8_t * message)
 	{
@@ -36,7 +36,8 @@ void AssertError(char* fileName, int lineNumber){
 	//exit(0);
 }
 
-uint8_t IsLogging(){
+uint8_t IsLogging()
+{
 	return logging;
 }
 

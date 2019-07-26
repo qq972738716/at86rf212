@@ -30,7 +30,7 @@
 //Enable TX CRC generation 1 = on 0 = off
 #define AT86RF212B_TX_CRC 			1
 //Sets the number of attempts to retransmit a frame when it was not acknowledged by the recipient (0x00 - 0x07)
-#define AT86RF212B_MAX_FRAME_RETRIES 0X07
+#define AT86RF212B_MAX_FRAME_RETRIES 0X07      /*重新传输帧次数*/
 //Switches between CSMA-CA Listen Before Talk algorithm within TX_ARET mode (0 [CSMA-CA] or 1 [LBT])
 #define AT86RF212B_CSMA_LBT_MODE 	 0x00
 //Number of retries in TX_ARET mode to repeat the CSMA-CA procedure before the transaction gets cancled (0x00[no retries] - 0x05[five retries] or 0x07[immedate frame transmission withou breforming CSMA-CA])
@@ -45,9 +45,9 @@
 #define AT86RF212B_AACK_I_AM_COORD 	0x00
 // 0 = off 1 = on, Prevents overwriting received data with new received data before having read the current data
 #define AT86RF212B_RX_SAFE_MODE		0x00
-// Enables the reception of reserved framed types
+// Enables the reception of reserved framed types 启用预留帧类型接收
 #define AT86RF212B_AACK_UPLD_RES_FT	0x01
-// Filter reserved frame types like data frame types
+// Filter reserved frame types like data frame types  启用保留帧类型筛选
 #define AT86RF212B_AACK_FLTR_RES_FT 0x01
 //0 = no pending data 0 ; 1 = pending data
 #define AT86RF212B_AACK_SET_PD		0x00

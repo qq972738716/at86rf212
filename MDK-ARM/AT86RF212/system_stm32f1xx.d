@@ -1,4 +1,4 @@
-at86rf212\system_stm32f1xx.o: ..//Src/system_stm32f1xx.c
+at86rf212\system_stm32f1xx.o: ../Src/system_stm32f1xx.c
 at86rf212\system_stm32f1xx.o: C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 at86rf212\system_stm32f1xx.o: C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 at86rf212\system_stm32f1xx.o: C:/Users/HONG/STM32Cube/Repository/STM32Cube_FW_F1_V1.7.0/Drivers/CMSIS/Include/core_cm3.h

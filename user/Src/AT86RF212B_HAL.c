@@ -205,7 +205,8 @@ void ReadInputHAL(){
 }
 
 //-----------------Implement writing RX buffer to the hardware output
-void WriteToOutputHAL(uint8_t * pTxData, uint32_t length){
+void WriteToOutputHAL(uint8_t * pTxData, uint32_t length)
+{
 	
 	HAL_UART_Transmit(&huart2,pTxData, length,0xFFFF) ;
 		
